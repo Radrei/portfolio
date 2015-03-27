@@ -1,0 +1,47 @@
+<html>
+<script>
+//set your data
+var companies = [
+	"Example Basement Company",
+	"Example Basement Company",
+	"Example Basement Company",
+	"Example Basement Company",
+	"Example Basement Company",
+	"Another Basement Company",
+];
+
+var locations = [
+	//Example Basement Company
+	"Michigan",
+	"Novi, MI",
+	"Canton, MI",
+	"Howell, MI",
+	"St Clair Shores, MI",
+	//Another Basement Company
+	"Commerce, MI",
+];
+var statements = ["great", "quality", "amazing", "exceptional"];
+
+//create function
+function displayList() {
+    //assign where to display data
+    var output = document.getElementById("output");
+    output.innerText = "";
+
+    //create loop that iterates your data
+    for (var i = 0; i < companies.length; i++) {
+        //randomize your statements
+        var randStatements = statements[Math.floor(Math.random() * statements.length)];
+        //Display the output
+        output.innerText += companies[i] + " offers " + randStatements + " basement waterproofing service in " + locations[i] + ".\n";
+    
+    }
+}
+</script>
+<body>
+<p>The purpose of this generator is to create blog titles. I had a little help making this from people on a forum. I used to have to type each blog title individually, but that took a long time. This tool has drastically increased my productivity, as the task it's used for was taken from around 8 hours to around 3 hours. <br/>
+Currently I can only get this to work in Chrome.</p>
+<button type="button" onclick="displayList()">Display List</button>
+<div id="output"></div>
+</body>
+</html>
